@@ -1,0 +1,25 @@
+repo module
+***********
+
+This module acts as a supporting module for all the other modules. It
+helps in validating the embeddedsw repo set in the environment and
+sets up the correct path for different components within embeddedsw.
+It doesnt have any main() function and running this module
+independently is not intended.
+
+class repo.Repo(repo_yaml_path='.repo.yaml')
+
+   Bases: "object"
+
+   This is the base class to get the embeddedsw repo path. This checks
+   if the embeddedsw path is set correctly. If set, this helps in
+   retrieving the corresponding directory path of the component inside
+   embeddedsw.
+
+   get_comp_dir(comp_name, sdt_path='')
+
+   validate_comp_path(comp_dir, comp_name)
+
+repo.main(arguments=None)
+
+repo.resolve_paths(args)

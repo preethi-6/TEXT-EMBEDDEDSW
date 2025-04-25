@@ -1,0 +1,17 @@
+retarget_app module
+*******************
+
+This module updates the application meta-data app.yaml and
+CMakeLists.txt for the new platform using the domain information
+provided.
+
+class retarget_app.RetargetApp(*args: Any, **kwargs: Any)
+
+   Bases: "BSP"
+
+retarget_app.main(arguments=None)
+
+retarget_app.retarget_app(args)
+
+   Parameters:
+      **args** (*dict*) -- Takes all the user inputs in a dictionary.

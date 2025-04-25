@@ -1,0 +1,88 @@
+validate_hw module
+******************
+
+Description:
+   This module acts as a supporting utility to validate the required
+   hardware for a given embedded software (ESW) component. It reads
+   the component YAML dependencies and generates a LOP (Lopper
+   Operations) configuration file for validating hardware
+   compatibility using lopper assists.
+
+Modules Used:
+   * os
+
+   * utils
+
+   * repo (Repo class)
+
+Supported Use Cases:
+   * Validating hardware requirements for ESW components.
+
+   * Assisting in checking dependencies for FreeRTOS and baremetal
+     applications.
+
+   * Special processor-specific checks (e.g., for Dhrystone app).
+
+Validation and Usage:
+   This module is not intended to be executed directly. It is used
+   internally by other tools that need to perform hardware validation
+   against ESW components.
+
+class validate_hw.ValidateHW(domain_path, proc, bsp_os, sdt, name, repo_info)
+
+   Bases: "Repo"
+
+   Description:
+      A class derived from Repo that helps in validating whether
+      required hardware components are available for a given ESW
+      component. It handles dependency checks and manages hardware
+      validation using lopper assists.
+
+   Modules Used:
+      * utils
+
+      * os
+
+      * repo (Repo class)
+
+   Supported Use Cases:
+      * Validation of applications and libraries that require specific
+        hardware IPs.
+
+      * Processor-specific checks for applications like Dhrystone.
+
+   Validation and Usage:
+      Instantiate this class and call *validate_hw()* to trigger
+      hardware validation against a provided system device tree (SDT)
+      and repository information.
+
+   validate_hw()
+
+validate_hw.lop_create_target(lop_cmds)
+
+   Description:
+      Creates a LOP (Lopper Operation) configuration in DTS format
+      based on the list of commands provided. This generated LOP file
+      helps the lopper tool validate the hardware setup against
+      component requirements.
+
+   Parameters:
+      **lop_cmds** (*list*) -- A list of commands where each command
+      is a list of [output directory, module id, options].
+
+   Returns:
+      Generated LOP configuration content in DTS format.
+
+   Return type:
+      str
+
+   Return Type:
+      str
+
+   This function performs the following tasks:
+      * Initializes a DTS structure for LOP entries.
+
+      * Iteratively adds a LOP assist node for each command.
+
+      * Returns the final DTS string representing the validation
+        operations.

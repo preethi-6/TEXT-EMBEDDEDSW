@@ -1,0 +1,56 @@
+Welcome to EMBEDDEDSW DOCUMENATION's documentation!
+***************************************************
+
+
+Contents:
+^^^^^^^^^
+
+* my_files
+
+  * build_app module
+
+  * build_bsp module
+
+  * config_bsp module
+
+  * create_app module
+
+  * create_bsp module
+
+  * create_example module
+
+  * get_template_data module
+
+  * library_utils module
+
+  * load_example module
+
+  * main module
+
+  * open_amp module
+
+  * reconfig_bsp module
+
+  * regen_bsp module
+
+  * regen_linker module
+
+  * repo module
+
+  * retarget_app module
+
+  * utils module
+
+  * validate_bsp module
+
+  * validate_hw module
+
+
+Indices and tables
+******************
+
+* Index
+
+* Module Index
+
+* Search Page

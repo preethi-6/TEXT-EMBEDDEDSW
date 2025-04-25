@@ -1,0 +1,25 @@
+create_example module
+*********************
+
+This module creates the driver or library example using the domain
+information provided to it. It generates the directory structure and
+the metadata required to build a particular driver or library example.
+
+class create_example.App(*args: Any, **kwargs: Any)
+
+   Bases: "BSP", "Repo"
+
+   This class helps in creating a driver or library application. It
+   contains attributes and functions that take domain path, and
+   template name as an input, create the directory structure and the
+   metadata(if needed) for the app.
+
+create_example.create_example(args)
+
+   Function that uses the above App class to create the template
+   application.
+
+   Parameters:
+      **args** (*dict*) -- Takes all the user inputs in a dictionary.
+
+create_example.main(arguments=None)

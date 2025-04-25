@@ -1,0 +1,22 @@
+regen_bsp module
+****************
+
+This module re creates the bsp for a given domain and system device-
+tree.
+
+class regen_bsp.RegenBSP(*args: Any, **kwargs: Any)
+
+   Bases: "BSP", "Library"
+
+   This class contains attributes and functions to regenerate the bsp.
+   It takes the domain path and sdt as inputs, reads the domain
+   configuration file present in the path to get the required inputs.
+
+   modify_bsp(args)
+
+regen_bsp.main(arguments=None)
+
+regen_bsp.regenerate_bsp(args)
+
+   Function to re generate the bsp for the user input domain path and
+   system device-tree.

@@ -1,0 +1,84 @@
+build_app module
+****************
+
+Description:
+   This module builds an already created application by configuring
+   and compiling it using CMake. It ensures the application's
+   workspace is set correctly and handles platform-specific settings.
+
+Modules Used: - argparse - os - utils - build_bsp - create_app -
+open_amp - validate_bsp
+
+Supported Use Cases: - Build a newly created application from source.
+- Ensure correct platform setup before build. - Automatically link
+libraries based on domain configuration.
+
+Validation and Usage: - Validated by switching between platforms and
+ensuring build success. - Usage example: Run *python build_app.py -w
+<workspace_dir>*.
+
+class build_app.Build_App(*args: Any, **kwargs: Any)
+
+   Bases: "BSP"
+
+   Description:
+      Helps in setting up the application directory structure and
+      initiates the build process by extending the BSP class
+      functionalities.
+
+   Parameters:
+      **args** (*dict*) -- Dictionary containing workspace, build, and
+      source directory paths.
+
+   Returns:
+      None
+
+   Return Type:
+      None
+
+   This class performs the following tasks: - Builds directory
+   structure based on workspace, source, and build directories. -
+   Initializes BSP environment required for app compilation.
+
+build_app.build_app(args)
+
+   Description:
+      Builds the application by first setting up the BSP, configuring
+      CMake, handling platform-specific adjustments, and compiling the
+      source code.
+
+   Parameters:
+      **args** (*dict*) -- Contains workspace, source, and build
+      directory paths along with other build options.
+
+   Returns:
+      None
+
+   Return Type:
+      None
+
+   This function performs the following tasks: - Initializes Build_App
+   to set up paths. - Generates BSP if not already configured. -
+   Updates CMake options based on language and platform. - Runs CMake
+   and make commands to build the application.
+
+build_app.main(arguments=None)
+
+   Description:
+      Parses command-line arguments and initiates the application
+      build process.
+
+   Parameters:
+      **arguments** (*list**, **optional*) -- List of command-line
+      arguments. Defaults to None.
+
+   Returns:
+      None
+
+   Return Type:
+      None
+
+   This function performs the following tasks: - Parses user-provided
+   arguments (workspace, build directory, source directory). - Sets up
+   logging verbosity. - Calls the build_app function to build the
+   application.

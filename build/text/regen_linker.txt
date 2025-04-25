@@ -1,0 +1,23 @@
+regen_linker module
+*******************
+
+This module regenerates the linker script for a given template
+application using the domain information provided to it.
+
+class regen_linker.RegenLinker(*args: Any, **kwargs: Any)
+
+   Bases: "BSP", "Repo"
+
+   This class helps in regenerating linker script for the template
+   application. It contains attributes and functions that take domain
+   path, and app source directory as an input.
+
+regen_linker.main(arguments=None)
+
+regen_linker.regen_linker(args)
+
+   Function that uses the above RegenLinker class to regenerate linker
+   script for the template application.
+
+   Parameters:
+      **args** (*dict*) -- Takes all the user inputs in a dictionary.

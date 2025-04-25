@@ -1,0 +1,24 @@
+config_bsp module
+*****************
+
+This module configures the bsp as per the passed library and os
+related parameters.
+
+class config_bsp.Bsp_config(*args: Any, **kwargs: Any)
+
+   Bases: "BSP", "Library"
+
+   This class contains attributes and functions that help in
+   configuring the created bsp. This makes use of BSP and Library
+   class attirbutes and functions to fetch the bsp confiration data
+   and the supporting lib funcs.
+
+config_bsp.configure_bsp(args)
+
+   This function uses Bsp_config class and configures the bsp based on
+   the user input arguments.
+
+   Parameters:
+      **args** (*dict*) -- User inputs in a dictionary format
+
+config_bsp.main(arguments=None)

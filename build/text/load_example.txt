@@ -1,0 +1,23 @@
+load_example module
+*******************
+
+This module loads the driver example meta-data
+
+class load_example.LoadExample(*args: Any, **kwargs: Any)
+
+   Bases: "BSP"
+
+   This class contains attributes and functions to load the example
+   meta-data in bsp.yaml file, It takes the domain as input, reads the
+   domain configuration file present in the path to get the required
+   inputs and updates the bsp.yaml.
+
+   update_example()
+
+load_example.cmake_drv_custom_target(proc, libsrc_folder, sdt, cmake_drv_name_list, cmake_drv_path_list)
+
+load_example.load_bsp(args)
+
+   Function to load the example meta-data for a given domain.
+
+load_example.main(arguments=None)

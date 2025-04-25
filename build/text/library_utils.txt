@@ -1,0 +1,110 @@
+library_utils module
+********************
+
+This module acts as a supporting module to get/set library related
+information inside the bsp. It helps in validating the library input,
+generating the library paramters database and adding/modifying the
+library when all the criteria are met. It doesnt have any main()
+function and running this module independently is not intended.
+
+class library_utils.Library(domain_path, proc, bsp_os, sdt, cmake_paths_append, libsrc_folder, repo_info)
+
+   Bases: "Repo"
+
+   This class contains attributes and functions that help in
+   validating library related inputs and adding a library to the
+   created bsp.
+
+   add_lib_for_apps(app_name)
+
+      Adds library to the bsp. Creates metadata if needed for the
+      library, runs cmake configure to prepare the build area for
+      library compilation and creates the library configuration of the
+      bsp.
+
+      Parameters:
+         **app_name** (*str*) -- template app name. If template
+         depends on certain libs, it copies their source to the libsrc
+         and it fetches the req library configurations for those libs
+
+   config_lib(comp_name, lib_list, cmake_cmd_append, is_app=False)
+
+   copy_lib_src(lib)
+
+      Copies the src directory of the passed library from the
+      respective path of embeddedsw to the libsrc folder of bsp.
+
+      Parameters:
+         **lib** (*str*) -- library whose source code needs to be
+         copied
+
+      Returns:
+         Library path inside embeddedsw | srcdir (str): Path of src
+         folder of library inside embeddedsw | dstdir (str): Path of
+         src folder inside libsrc folder of bsp
+
+      Return type:
+            libdir (str)
+
+   gen_lib_metadata(lib)
+
+   get_default_lib_params(build_lib_dir, lib_list)
+
+      Creates a library configuration data that contains all the
+      available parameters and their values of each library added in
+      the bsp.
+
+      Parameters:
+         * **build_lib_dir** (*str*) -- Cmake directory where the
+           libraries are configured and compiled
+
+         * **lib_list** (*str*) -- List of libraries added in the bsp.
+
+      Returns:
+         A dictionary that contains all the available parameters and
+         their values of each library added in the bsp.
+
+      Return type:
+         default_lib_config (dict)
+
+   get_depends_libs(lib_name, lib_list=[])
+
+   is_valid_lib(comp_name, silent_discard=True)
+
+   modify_cmake_subdirs(lib_list, action='add')
+
+   remove_lib(lib)
+
+   validate_drv_for_lib(comp_name, drvlist)
+
+   validate_lib_in_bsp(lib)
+
+      Checks if the passed library name from the user exists in the
+      bsp. This is a helper function to support remove library and set
+      property usecases.
+
+      Parameters:
+         **lib** (*str*) -- Library name that needs to be validated
+
+   validate_lib_name(lib)
+
+      Checks if the passed library name from the user is valid for the
+      sdt proc and os combination. Exits with valid assertion if the
+      user input is wrong.
+
+      Parameters:
+         **lib** (*str*) -- Library name that needs to be validated
+
+   validate_lib_param(lib, lib_param)
+
+      Checks if the passed library parameter that needs to be set in
+      library configuration is valid. Exits with a valid assertion if
+      parameter name is wrong. This acts as a helper in set property
+      usecase.
+
+      Parameters:
+         * **lib** (*|*) -- Library name whose config needs to be
+           changed
+
+         * **lib_param** (*|*) -- Library parameter that needs to be
+           changed

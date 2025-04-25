@@ -1,0 +1,73 @@
+create_bsp module
+*****************
+
+This module creates a domain and a bsp for the passed processor, os
+and system device tree combination.
+
+class create_bsp.Domain(args)
+
+   Bases: "Repo"
+
+   This class helps in creating a software domain. This contains
+   functions to create the domain's directory structure, validate the
+   user inputs for the domain on demand and manipulate the cmake
+   toolchain file as per the user inputs.
+
+   apps_cflags_update(toolchain_file, app_name, proc)
+
+      This function acts as a helper for toolchain_intr_mapping. This
+      adds template application specific compiler entries in the cmake
+      toolchain file of the domain.
+
+      Parameters:
+         * **toolchain_file** (*|*) -- The toolchain file that needs
+           to be updated
+
+         * **app_name** (*|*) -- Specific app name that needs new
+           entries
+
+         * **proc** (*|*) -- Proc specific data pertaining to the app.
+
+      Returns:
+         returns the new compiler flags that were set.
+
+      Return type:
+         compiler_flags (str)
+
+   build_dir_struct()
+
+      Creates the include, lib and libsrc folder inside bsp directory.
+
+   toolchain_intr_mapping()
+
+      We have reference toolchain files in embeddedsw which contains
+      default compiler related cmake inputs. This function copies the
+      toolchain file according to user os and processor input in the
+      domain directory. Once copied, it manipulates few entries in the
+      file needed for specific proc /os/app scenario.
+
+      In addition, this function also processes the sdt directory to
+      create a a single system dts file that has interrupts correctly
+      mapped as per the input processor.
+
+      Returns:
+         Processed system device tree file that would be used across
+         the
+            created domain for further processing.
+
+         toolchain_file (str):
+            Toolchain file for cmake infra that would be used across
+            the created domain for builds.
+
+      Return type:
+         sdt (str)
+
+create_bsp.create_domain(args)
+
+   Function that uses the above Domain class to create the baremetal
+   domain. :param args: Takes all the user inputs in a dictionary.
+   :type args: dict
+
+create_bsp.lop_create_target(lop_cmds)
+
+create_bsp.main(arguments=None)

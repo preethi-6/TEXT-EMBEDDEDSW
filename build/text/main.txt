@@ -1,0 +1,6 @@
+main module
+***********
+
+main.info()
+
+main.main()

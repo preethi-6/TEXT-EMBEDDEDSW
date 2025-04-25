@@ -1,0 +1,160 @@
+my_files
+********
+
+* build_app module
+
+  * "Build_App"
+
+  * "build_app()"
+
+  * "main()"
+
+* build_bsp module
+
+* config_bsp module
+
+  * "Bsp_config"
+
+  * "configure_bsp()"
+
+  * "main()"
+
+* create_app module
+
+* create_bsp module
+
+  * "Domain"
+
+    * "Domain.apps_cflags_update()"
+
+    * "Domain.build_dir_struct()"
+
+    * "Domain.toolchain_intr_mapping()"
+
+  * "create_domain()"
+
+  * "lop_create_target()"
+
+  * "main()"
+
+* create_example module
+
+  * "App"
+
+  * "create_example()"
+
+  * "main()"
+
+* get_template_data module
+
+  * "fetch_template_data()"
+
+  * "main()"
+
+* library_utils module
+
+  * "Library"
+
+    * "Library.add_lib_for_apps()"
+
+    * "Library.config_lib()"
+
+    * "Library.copy_lib_src()"
+
+    * "Library.gen_lib_metadata()"
+
+    * "Library.get_default_lib_params()"
+
+    * "Library.get_depends_libs()"
+
+    * "Library.is_valid_lib()"
+
+    * "Library.modify_cmake_subdirs()"
+
+    * "Library.remove_lib()"
+
+    * "Library.validate_drv_for_lib()"
+
+    * "Library.validate_lib_in_bsp()"
+
+    * "Library.validate_lib_name()"
+
+    * "Library.validate_lib_param()"
+
+* load_example module
+
+  * "LoadExample"
+
+    * "LoadExample.update_example()"
+
+  * "cmake_drv_custom_target()"
+
+  * "load_bsp()"
+
+  * "main()"
+
+* main module
+
+  * "info()"
+
+  * "main()"
+
+* open_amp module
+
+* reconfig_bsp module
+
+  * "ReconfigBSP"
+
+  * "main()"
+
+  * "reconfig_bsp()"
+
+* regen_bsp module
+
+  * "RegenBSP"
+
+    * "RegenBSP.modify_bsp()"
+
+  * "main()"
+
+  * "regenerate_bsp()"
+
+* regen_linker module
+
+  * "RegenLinker"
+
+  * "main()"
+
+  * "regen_linker()"
+
+* repo module
+
+  * "Repo"
+
+    * "Repo.get_comp_dir()"
+
+    * "Repo.validate_comp_path()"
+
+  * "main()"
+
+  * "resolve_paths()"
+
+* retarget_app module
+
+  * "RetargetApp"
+
+  * "main()"
+
+  * "retarget_app()"
+
+* utils module
+
+* validate_bsp module
+
+* validate_hw module
+
+  * "ValidateHW"
+
+    * "ValidateHW.validate_hw()"
+
+  * "lop_create_target()"

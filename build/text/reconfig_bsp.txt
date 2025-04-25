@@ -1,0 +1,17 @@
+reconfig_bsp module
+*******************
+
+class reconfig_bsp.ReconfigBSP(*args: Any, **kwargs: Any)
+
+   Bases: "BSP"
+
+   This class contains attributes and functions to Reconfig the bsp.
+   It takes the domain path as input validates it for the build
+   configuration if it's changed will create new build folder and
+   applies the cmake configuration.
+
+reconfig_bsp.main(arguments=None)
+
+reconfig_bsp.reconfig_bsp(args)
+
+   Function to reconfig the bsp for the user input domain path.

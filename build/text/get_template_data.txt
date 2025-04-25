@@ -1,0 +1,14 @@
+get_template_data module
+************************
+
+This module fetches all the template app related data from esw yamls
+and puts it into a yaml file.
+
+get_template_data.fetch_template_data(esw_schema, dest_dir)
+
+   Collects all the template related data into a yaml file.
+
+   Parameters:
+      **esw_app_dir_path** -- sw_apps directory path of embeddedsw
+
+get_template_data.main(arguments=None)
